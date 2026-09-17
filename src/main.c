@@ -151,7 +151,7 @@ int32 main() {
       DrawText(TextFormat("Player: %d", game.player_score), 10, 10, 20, WHITE);
       DrawText(TextFormat("Enemy: %d", game.enemy_score), game.window_size.x - 120, 10, 20, WHITE);
     } else {
-      on_game_over(&game);
+      on_match_over(&game);
     }
     if (game.game_over) {
       break;

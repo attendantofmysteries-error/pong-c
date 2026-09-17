@@ -19,7 +19,7 @@ void game_update(game_t *game) {
   game->delta_time = GetFrameTime();
 }
 
-void on_game_over(game_t *game) {
+void on_match_over(game_t *game) {
   if (game->player_score > game->enemy_score) {
     DrawText("Game Over! You win!", game->window_size.x / 2 - 200, (game->window_size.y / 2) - 100, 40, GREEN);
     DrawText("Do you want to play a new game [Y/N]", (game->window_size.x / 2) - 300, game->window_size.y / 2, 40, WHITE);
@@ -28,6 +28,9 @@ void on_game_over(game_t *game) {
     DrawText("Do you want to restart [Y/N]", (game->window_size.x / 2) - 285, game->window_size.y / 2, 40, WHITE);
   }
   if (IsKeyPressed(KEY_Y)) {
+    game->game_over = false;
+    game->player_score = 0;
+    game->enemy_score = 0;
     game->match_over = false;
   } else if (IsKeyPressed(KEY_N)) {
     game->game_over = true;

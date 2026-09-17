@@ -16,4 +16,4 @@ typedef struct game {
 
 void game_init(game_t* game, Vector2 window_position, Vector2 window_size);
 void game_update(game_t* game);
-void on_game_over(game_t* game);
+void on_match_over(game_t* game);
